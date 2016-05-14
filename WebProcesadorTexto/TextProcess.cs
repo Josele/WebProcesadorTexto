@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 public enum SilabaF { N, C, V, CV, CC, VN, VV, VC, VVC, CVC, CVV, CCV, CVVC, CVVV, CCVV, CCVC, CVVVC, CCVVC, CCVVCC };
 
-public class ProcesadorTexto
+public class TextProcess
 {
     private static char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
     
-    private String miTexto { get; }
-    public ProcesadorTexto()
+    private String miTexto { get; set; }
+    public TextProcess()
     {
         this.miTexto = "";
 
     }
-    public ProcesadorTexto(String miTexto)
+    public TextProcess(String miTexto)
     {
         if (miTexto == null || miTexto == "")
             throw new Exception("There is no text to be proccess");
         
         this.miTexto = miTexto;
+    }
+    public void setTexto(String miTexto="")
+    {
+        this.miTexto = miTexto;
+        
     }
     public String ProcesarTexto(int nMaxChar)
     {

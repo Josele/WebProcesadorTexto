@@ -119,7 +119,7 @@
     <Compile Include="ProcesadorTexto.aspx.designer.cs">
       <DependentUpon>ProcesadorTexto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProcesadorTexto.cs" />
+    <Compile Include="TextProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
