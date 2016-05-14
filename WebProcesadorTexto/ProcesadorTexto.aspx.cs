@@ -14,6 +14,7 @@ namespace WebProcesadorTexto
         {
             P1 = new TextProcess();
             Button1.UseSubmitBehavior=false;
+       
         }
 
         
@@ -21,9 +22,9 @@ namespace WebProcesadorTexto
         protected void Button1_Click(object sender, EventArgs e)
         {
             int number=0;
-            this.P1.setTexto(TextBox1.ToString());
-            Int32.TryParse(TextBox2.Text.ToString(), out number);
-            //this.P1.ProcesarTexto(number);
+            this.P1.setTexto(TextBox1.Text);
+            if(Int32.TryParse(TextBox2.Text, out number))
+            TextBox4.Text = P1.ProcesarTexto(number);
         }
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {

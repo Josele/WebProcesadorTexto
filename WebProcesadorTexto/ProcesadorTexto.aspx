@@ -11,13 +11,13 @@
     <form id="form1" runat="server">
     <div style="height: 117px; width: 916px">
     
-        <asp:TextBox ID="TextBox1" runat="server" Height="79px" OnTextChanged="TextBox1_TextChanged" Width="446px"></asp:TextBox>
-        <asp:TextBox ID="TextBox4" runat="server" Height="79px" style="margin-right: 0px; margin-top: 0px" Width="395px"></asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" Height="79px" OnTextChanged="TextBox1_TextChanged" Width="446px" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" Height="79px" style="margin-right: 0px; margin-top: 0px" TextMode="MultiLine" Width="395px"></asp:TextBox>
         <div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     
             <asp:Label ID="Label1" runat="server" Text="Number of characters"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" TextMode="Number"></asp:TextBox>
         </div>
     
     </div>
