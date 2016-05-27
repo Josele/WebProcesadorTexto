@@ -38,8 +38,7 @@ public class TextProcess
         {
             
             spacepos = miTexto.Substring(length, nMaxChar+1).LastIndexOf(" ")+1;//cuando tenemos una palabra de la misma longitud, nos saltamos el espacio
-            if (spacepos 
-                == 0)
+            if (spacepos == 0)
             {   //comprobar palabra
                 spacepos=getToCut(nMaxChar, length);// desde length 
                // spacepos =(spacepos == -1)?nMaxChar:spacepos;
@@ -62,6 +61,8 @@ public class TextProcess
     }
     public int getToCut(int nMaxChar, int length)
     {   // no comprobamos signos de puntuación, mirar IndexOfAny
+        if (nMaxChar == 1)
+            return nMaxChar;
         int suma = 0;
         int primerEspacio = miTexto.Substring(length).LastIndexOf(" ", nMaxChar) + 1+length;
         int corte = -primerEspacio+ miTexto.IndexOf(" ", primerEspacio) + 1;
@@ -74,7 +75,7 @@ public class TextProcess
                 return suma -posSilaba[i];
             else if (suma > nMaxChar-1 && i == 0)
             {
-                return nMaxChar;
+                return nMaxChar-1;
             }
             
         }

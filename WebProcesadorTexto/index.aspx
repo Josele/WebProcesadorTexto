@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProcesadorTexto.aspx.cs" Inherits="WebProcesadorTexto.ProcesadorTexto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebProcesadorTexto.ProcesadorTexto" %>
 
 <!DOCTYPE html>
 
