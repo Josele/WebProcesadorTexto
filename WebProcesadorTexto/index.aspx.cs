@@ -22,9 +22,13 @@ namespace WebProcesadorTexto
         protected void Button1_Click(object sender, EventArgs e)
         {
             int number=0;
+            
             this.P1.setTexto(TextBox1.Text);
-            if(Int32.TryParse(TextBox2.Text, out number))
-            TextBox4.Text = P1.ProcesarTexto(number);
+            if (Int32.TryParse(TextBox2.Text, out number) && number > 1)
+                if (TextBox1.Text != "" && TextBox1.Text != null)
+                    TextBox4.Text = P1.ProcesarTexto(number);
+            else
+                TextBox4.Text = "You have to use a higher number than 1 or a not null text";
         }
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {

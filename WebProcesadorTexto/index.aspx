@@ -1,4 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebProcesadorTexto.ProcesadorTexto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebProcesadorTexto.ProcesadorTexto"  ValidateRequest="false" %>
+
+<script runat="server">
+
+  void submitBtn_Click(object sender, EventArgs e)
+  {
+    // Encode the string input
+    StringBuilder sb = new StringBuilder(
+                            HttpUtility.HtmlEncode(TextBox4.Text));
+    // Selectively allow  <b> and <i>
+    sb.Replace("&lt;b&gt;", "<b>");
+    sb.Replace("&lt;/b&gt;", "");
+    sb.Replace("&lt;i&gt;", "<i>");
+    sb.Replace("&lt;/i&gt;", "");
+    Response.Write(sb.ToString());
+  }
+</script>
 
 <!DOCTYPE html>
 
