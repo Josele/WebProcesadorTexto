@@ -71,7 +71,11 @@ public class TextProcess
         for (int i = 0; i < posSilaba.Length; i++)
         {
             suma += posSilaba[i];
-            if (suma > nMaxChar-1 && i != 0)
+            if (posSilaba[i]==-1)
+            {
+                return nMaxChar - 1;
+            }
+            else if (suma > nMaxChar-1 && i != 0)
                 return suma -posSilaba[i];
             else if (suma > nMaxChar-1 && i == 0)
             {
@@ -97,22 +101,49 @@ public class TextProcess
             if (isVocal(l1))
             {
                 cut = caso_1(word);
-                lista.Add(cut);
-                word = word.Substring(cut);
-            }
+                if (cut == -1)
+                {
+                    lista.Add(-1);
+                    return lista.ToArray();
+                }
+                else
+                {
+                    lista.Add(cut);
+                    word = word.Substring(cut);
+                }
+             }
             else {
                 l2 = Substring(word, 1, 1);
                 if (isVocal(l2))
                 {
                     cut = caso_2(word);
-                    lista.Add(cut);
-                    word = word.Substring(cut);
+                    if (cut == -1)
+                    {
+                        lista.Add(-1);
+                        return lista.ToArray();
+                    }
+                    else
+                    {
+                        lista.Add(cut);
+                        word = word.Substring(cut);
+                    }
                 }
                 else
                 {
                     cut = caso_3(word);
-                    lista.Add(cut);
-                    word = word.Substring(cut);
+                    if (cut == -1)
+                    {
+                        lista.Add(-1);
+                        return lista.ToArray();
+                    }
+                    else
+                    {
+                        lista.Add(cut);
+                        word = word.Substring(cut);
+
+                    }
+
+
                 }
             }
 
