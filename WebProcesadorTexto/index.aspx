@@ -28,7 +28,7 @@
     <form id="form1" runat="server">
         <ul class="form-style-1">
             <li>
-                <label>Set your text <span class="required">*</span></label><asp:TextBox ID="TextBox1" runat="server" Height="79px" CssClass="field-divided" OnTextChanged="TextBox1_TextChanged" Width="446px" TextMode="MultiLine"></asp:TextBox></li>
+                <label>Set your text </label><asp:TextBox ID="TextBox1" runat="server" Height="79px" CssClass="field-divided" OnTextChanged="TextBox1_TextChanged" Width="446px" TextMode="MultiLine"></asp:TextBox></li>
             <li>
                 <label>Output</label>
                 <asp:TextBox ID="TextBox4" runat="server" Height="79px" CssClass="field-divided" TextMode="MultiLine" Width="446px"></asp:TextBox>

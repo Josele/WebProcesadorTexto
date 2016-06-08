@@ -80,9 +80,6 @@ select{
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
 }
-.form-style-1 .required{
-    color:red;
-}
 footer {
    position: absolute;
    bottom: 0;
