@@ -39,7 +39,7 @@ public class TextProcess
             
             spacepos = miTexto.Substring(length, nMaxChar+1).LastIndexOf(" ")+1;//cuando tenemos una palabra de la misma longitud, nos saltamos el espacio
             if (spacepos == 0)
-            {   //comprobar palabra
+            {  
                 spacepos=getToCut(nMaxChar, length);// desde length 
                // spacepos =(spacepos == -1)?nMaxChar:spacepos;
                 container = container + miTexto.Substring(length, spacepos).Trim() + (miTexto.Substring(length, spacepos).Trim().Length != 0 ? "-\n" : "");
@@ -51,22 +51,18 @@ public class TextProcess
                 length += spacepos;
 
             }
-            //Console.WriteLine(length.ToString());
-            // container =container+ miTexto.Substring(length, nMaxChar).Trim()+(miTexto.Substring(length, nMaxChar).Trim().Length!=0?"\n":"");
-            //container = container+ miTexto.Substring(length, nMaxChar).Trim()+(miTexto.Substring(length, nMaxChar).Trim().Length!=0?"\n":"");
-            //length += nMaxChar;// cuando  cambiemos a saltos en espacios, habrá que modificar esto también.
         }
         container = container + miTexto.Substring(length, miTexto.Length - length).Trim();
         return container;
     }
     public int getToCut(int nMaxChar, int length)
-    {   // no comprobamos signos de puntuación, mirar IndexOfAny
+    {   
         if (nMaxChar == 1)
             return nMaxChar;
         int suma = 0;
         int primerEspacio = miTexto.Substring(length).LastIndexOf(" ", nMaxChar) + 1+length;
         int corte = -primerEspacio+ miTexto.IndexOf(" ", primerEspacio) + 1;
-        String word = miTexto.Substring(primerEspacio, (corte <= 0 ? (miTexto.Substring(primerEspacio).Length) : (corte)));//esto esta mal
+        String word = miTexto.Substring(primerEspacio, (corte <= 0 ? (miTexto.Substring(primerEspacio).Length) : (corte)));
         int[] posSilaba = getSilabas(word.Trim());
         for (int i = 0; i < posSilaba.Length; i++)
         {
@@ -89,7 +85,7 @@ public class TextProcess
     }
 
     public int[] getSilabas(String word)
-    {   // no comprobamos signos de puntuación, mirar IndexOfAny
+    {   
         String l1;
         String l2;
         int cut=-1;
@@ -224,7 +220,7 @@ public class TextProcess
 
         return -1;
     }
-    public int caso_3(string word) //terminar
+    public int caso_3(string word) 
     {
         SilabaF[] tA = { SilabaF.N, SilabaF.CV, SilabaF.CCV };
         SilabaF[] tB = { SilabaF.N, SilabaF.CV };
