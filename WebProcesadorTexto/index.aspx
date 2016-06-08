@@ -31,7 +31,7 @@
                 <label>Set your text <span class="required">*</span></label><asp:TextBox ID="TextBox1" runat="server" Height="79px" CssClass="field-divided" OnTextChanged="TextBox1_TextChanged" Width="446px" TextMode="MultiLine"></asp:TextBox></li>
             <li>
                 <label>Output</label>
-                <asp:TextBox ID="TextBox4" runat="server" Height="79px" CssClass="field-divided" TextMode="MultiLine" Width="395px"></asp:TextBox>
+                <asp:TextBox ID="TextBox4" runat="server" Height="79px" CssClass="field-divided" TextMode="MultiLine" Width="446px"></asp:TextBox>
             </li>
             <li>
                 <label>Number of characters</label> 
