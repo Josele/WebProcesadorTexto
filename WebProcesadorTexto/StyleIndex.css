@@ -83,3 +83,15 @@ select{
 .form-style-1 .required{
     color:red;
 }
+footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+#cssvalidator {
+    border:0;
+    width:88px;
+    height:31px;
+    float:right;
+}
